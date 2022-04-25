@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nporoykov-service
+spec:
+  selector:
+    app: nikitaspor-hw1-status
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8080
+  type: NodePort

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nporoykov-deployment
+spec:
+    replicas: 4
+    selector:
+       matchLabels:
+          app: nikitaspor-hw1-status
+    template:
+       metadata:
+          labels:
+             app: nikitaspor-hw1-status
+       spec:
+          containers:
+          - name: nikitaspor-status
+            image: nikitaspor/myrep:hw1
+            ports:
+              - name: web 
+                containerPort: 8080
